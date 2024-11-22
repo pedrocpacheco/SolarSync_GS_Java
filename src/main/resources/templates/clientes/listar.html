@@ -15,15 +15,16 @@
 
     /* Cabeçalho */
     h1 {
-      color: #4CAF50;
+      color: #ff9223;
       text-align: center;
       margin-top: 20px;
     }
 
     /* Links */
     a {
-      color: #4CAF50;
+      color: #ff9223;
       text-decoration: none;
+      margin-right: 10px;
     }
 
     a:hover {
@@ -34,7 +35,7 @@
     button {
       padding: 10px;
       color: white;
-      background-color: #4CAF50;
+      background-color: #ff9223;
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -43,36 +44,10 @@
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #e67f1f;
     }
 
-    /* Formulário */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      margin: 10px 0 5px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    textarea {
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      width: 100%;
-    }
-
-    /* Estilo da Tabela */
+    /* Tabela */
     table {
       width: 90%;
       margin: 20px auto;
@@ -88,7 +63,7 @@
     }
 
     th {
-      background-color: #4CAF50;
+      background-color: #ff9223;
       color: white;
       font-weight: bold;
     }
@@ -100,54 +75,42 @@
     tbody tr:hover {
       background-color: #f1f1f1;
     }
-
-    /* Estilo para mensagens de feedback */
-    .alert {
-      padding: 10px;
-      margin: 10px auto;
-      max-width: 500px;
-      border: 1px solid #4CAF50;
-      border-radius: 4px;
-      background-color: #dff0d8;
-      color: #3c763d;
-    }
   </style>
-
 </head>
 
 <body>
-  <a href="/empresas">Empresas</a>
-  <a href="/campanhas">Campanhas</a>
-  <h1>Clientes</h1>
+  <div style="text-align: center; margin-top: 10px;">
+    <a href="/empresas">Empresas</a>
+    <a href="/campanhas">Campanhas</a>
+    <a href="/clientes/novo">Novo Cliente</a>
+  </div>
+
+  <h1>Lista de Clientes</h1>
+
   <table>
     <thead>
       <tr>
         <th>Nome</th>
         <th>Email</th>
-        <th>Escolaridade</th>
-        <th>Estado Civil</th>
-        <th>Gênero</th>
+        <th>Região de Cobertura</th>
+        <th>Tipo de Propriedade</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr th:each="cliente : ${clientes}">
-        <td th:text="${cliente.id}"></td>
-        <td th:text="${cliente.nome}"></td>
-        <td th:text="${cliente.email}"></td>
-        <td th:text="${cliente.escolaridade.getDescricao()}"></td>
-        <td th:text="${cliente.estadoCivil.getDescricao()}"></td>
-        <td th:text="${cliente.genero.getDescricao()}"></td>
+        <td th:text="${cliente.nome}">Nome do Cliente</td>
+        <td th:text="${cliente.email}">Email do Cliente</td>
+        <td th:text="${cliente.regiaoCobertura}">Região de Cobertura</td>
+        <td th:text="${cliente.tipoPropriedade}">Tipo de Propriedade</td>
         <td>
-          <a th:href="@{/clientes/visualizar/{id}(id=${cliente.id})}">Visualizar</a>
-          <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a>
-          <a th:href="@{/clientes/deletar/{id}(id=${cliente.id})}"
-            onclick="return confirm('Deseja realmente deletar?')">Deletar</a>
+          <a th:href="@{/clientes/visualizar/{id}(id=${cliente.id})}">Visualizar</a> |
+          <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a> |
+          <a th:href="@{/clientes/deletar/{id}(id=${cliente.id})}" onclick="return confirm('Tem certeza que deseja deletar este cliente?')">Deletar</a>
         </td>
       </tr>
     </tbody>
   </table>
-  <a href="/clientes/novo">Novo Cliente</a>
 </body>
 
 </html>

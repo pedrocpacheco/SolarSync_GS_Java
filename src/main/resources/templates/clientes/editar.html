@@ -15,14 +15,14 @@
 
     /* Cabeçalho */
     h1 {
-      color: #4CAF50;
+      color: #ff9223;
       text-align: center;
       margin-top: 20px;
     }
 
     /* Links */
     a {
-      color: #4CAF50;
+      color: #ff9223;
       text-decoration: none;
     }
 
@@ -34,7 +34,7 @@
     button {
       padding: 10px;
       color: white;
-      background-color: #4CAF50;
+      background-color: #ff9223;
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -43,14 +43,14 @@
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #e67f1f;
     }
 
     /* Formulário */
     form {
       display: flex;
       flex-direction: column;
-      max-width: 500px;
+      max-width: 600px;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
@@ -60,91 +60,54 @@
 
     label {
       margin: 10px 0 5px;
+      font-size: 16px;
     }
 
     input[type="text"],
-    input[type="number"],
-    textarea {
-      padding: 10px;
+    input[type="password"],
+    select {
+      padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 4px;
       width: 100%;
+      font-size: 16px;
     }
 
-    /* Estilo da Tabela */
-    table {
-      width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
 
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #4CAF50;
-      color: white;
-      font-weight: bold;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    tbody tr:hover {
-      background-color: #f1f1f1;
-    }
-
-    /* Estilo para mensagens de feedback */
-    .alert {
-      padding: 10px;
-      margin: 10px auto;
-      max-width: 500px;
-      border: 1px solid #4CAF50;
-      border-radius: 4px;
-      background-color: #dff0d8;
-      color: #3c763d;
+      form {
+        max-width: 90%;
+        padding: 15px;
+      }
     }
   </style>
-
 </head>
 
 <body>
   <h1>Editar Cliente</h1>
   <form th:action="@{/clientes/editar/{id}(id=${cliente.id})}" th:object="${cliente}" method="post">
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" th:field="*{nome}" />
-    <br />
+    <input type="text" id="nome" th:field="*{nome}" required />
     <label for="email">Email:</label>
-    <input type="text" id="email" th:field="*{email}" />
-    <br />
-    <label for="escolaridade">Escolaridade:</label>
-    <select id="escolaridade" th:field="*{escolaridade}">
-      <option th:each="escolaridade : ${escolaridades}" th:value="${escolaridade}"
-        th:text="${escolaridade.getDescricao()}" th:selected="${escolaridade == cliente.escolaridade}"></option>
+    <input type="text" id="email" th:field="*{email}" required />
+    <label for="password">Senha:</label>
+    <input type="password" id="password" th:field="*{password}" />
+    <label for="regiaoCobertura">Região de Cobertura:</label>
+    <select id="regiaoCobertura" th:field="*{regiaoCobertura}" required>
+      <option th:each="regiao : ${regioes}" th:value="${regiao}" th:text="${regiao.descricao}"></option>
     </select>
-    <br />
-    <label for="estadoCivil">Estado Civil:</label>
-    <select id="estadoCivil" th:field="*{estadoCivil}">
-      <option th:each="estadoCivil : ${estadosCivis}" th:value="${estadoCivil}" th:text="${estadoCivil.getDescricao()}"
-        th:selected="${estadoCivil == cliente.estadoCivil}"></option>
+    <label for="tipoPropriedade">Tipo de Propriedade:</label>
+    <select id="tipoPropriedade" th:field="*{tipoPropriedade}" required>
+      <option th:each="tipo : ${tiposPropriedade}" th:value="${tipo}" th:text="${tipo.descricao}"></option>
     </select>
-    <br />
-    <label for="genero">Gênero:</label>
-    <select id="genero" th:field="*{genero}">
-      <option th:each="genero : ${generos}" th:value="${genero}" th:text="${genero.getDescricao()}"
-        th:selected="${genero == cliente.genero}"></option>
-    </select>
-    <br />
     <button type="submit">Salvar</button>
   </form>
-  <a href="/clientes">Voltar</a>
+  <a th:href="@{/clientes}">Voltar</a>
 </body>
 
 </html>

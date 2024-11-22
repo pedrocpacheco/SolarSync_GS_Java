@@ -15,14 +15,14 @@
 
     /* Cabeçalho */
     h1 {
-      color: #4CAF50;
+      color: #ff9223;
       text-align: center;
       margin-top: 20px;
     }
 
     /* Links */
     a {
-      color: #4CAF50;
+      color: #ff9223;
       text-decoration: none;
     }
 
@@ -34,7 +34,7 @@
     button {
       padding: 10px;
       color: white;
-      background-color: #4CAF50;
+      background-color: #ff9223;
       border: none;
       border-radius: 4px;
       cursor: pointer;
@@ -43,14 +43,14 @@
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #e67f1f;
     }
 
     /* Formulário */
     form {
       display: flex;
       flex-direction: column;
-      max-width: 500px;
+      max-width: 600px;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
@@ -60,19 +60,22 @@
 
     label {
       margin: 10px 0 5px;
+      font-size: 16px;
     }
 
     input[type="text"],
-    input[type="number"],
-    textarea {
-      padding: 10px;
+    input[type="tel"],
+    input[type="email"],
+    select {
+      padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 4px;
       width: 100%;
+      font-size: 16px;
     }
 
-    /* Estilo da Tabela */
+    /* Estilo de Tabela */
     table {
       width: 90%;
       margin: 20px auto;
@@ -88,7 +91,7 @@
     }
 
     th {
-      background-color: #4CAF50;
+      background-color: #ff9223;
       color: white;
       font-weight: bold;
     }
@@ -106,12 +109,24 @@
       padding: 10px;
       margin: 10px auto;
       max-width: 500px;
-      border: 1px solid #4CAF50;
+      border: 1px solid #ff9223;
       border-radius: 4px;
-      background-color: #dff0d8;
-      color: #3c763d;
+      background-color: #ffe5d1;
+      color: #d85f18;
     }
-  </style>
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 24px;
+      }
+      form {
+        max-width: 90%;
+        padding: 15px;
+      }
+    }
+</style>
+
 
 </head>
 
@@ -120,9 +135,9 @@
   <div>
     <p><strong>Nome:</strong> <span th:text="${cliente.nome}"></span></p>
     <p><strong>Email:</strong> <span th:text="${cliente.email}"></span></p>
-    <p><strong>Escolaridade:</strong> <span th:text="${cliente.escolaridade.descricao}"></span></p>
-    <p><strong>Estado Civil:</strong> <span th:text="${cliente.estadoCivil.descricao}"></span></p>
-    <p><strong>Gênero:</strong> <span th:text="${cliente.genero.descricao}"></span></p>
+    <p><strong>Senha:</strong> <span th:text="${cliente.password}"></span></p>
+    <p><strong>Região de Cobertura:</strong> <span th:text="${cliente.regiaoCobertura}"></span></p>
+    <p><strong>Tipo de Propriedade:</strong> <span th:text="${cliente.tipoPropriedade}"></span></p>
   </div>
   <a href="/clientes">Voltar</a>
 </body>
