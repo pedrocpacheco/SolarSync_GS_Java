@@ -25,9 +25,8 @@ public class SpringAIChatController {
   @SuppressWarnings("rawtypes")
   @GetMapping("/generate/{id}")
   public ResponseEntity<Map> generate(@PathVariable Long id) {
-    // Aqui você deve obter os detalhes da campanha pelo ID.
-    String campaignDetails = chatService.getCampaignDetailsById(id); // Método que você irá criar
-    String analysisResult = chatService.run(campaignDetails);
+    String servicoDetails = chatService.getServicoDetailsById(id); 
+    String analysisResult = chatService.run(servicoDetails);
     return new ResponseEntity<>(Map.of("ollama", analysisResult), HttpStatus.OK);
   }
 }

@@ -29,10 +29,10 @@ public class SpringAIChatService {
         .replace("\n", "");
   }
 
-  public String getCampaignDetailsById(Long id) {
+  public String getServicoDetailsById(Long id) {
     Servico servico = servicoRepository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Campanha não encontrada"));
+        .orElseThrow(() -> new RuntimeException("Servico não encontrado"));
 
-    return String.format("");
+    return String.format("Quanto é 1 + 1?");
   }
 }
