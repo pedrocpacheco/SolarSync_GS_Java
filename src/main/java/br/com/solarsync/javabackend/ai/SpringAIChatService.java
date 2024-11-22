@@ -4,19 +4,19 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.solarsync.javabackend.model.Campanha;
-import br.com.solarsync.javabackend.repository.CampanhaRepository;
+import br.com.solarsync.javabackend.model.Servico;
+import br.com.solarsync.javabackend.repository.ServicoRepository;
 
 @Service
 public class SpringAIChatService {
   private final ChatClient.Builder chatClientBuilder;
 
   @Autowired
-  private final CampanhaRepository campanhaRepository;
+  private final ServicoRepository servicoRepository;
 
-  public SpringAIChatService(ChatClient.Builder chatClientBuilder, CampanhaRepository campanhaRepository) {
+  public SpringAIChatService(ChatClient.Builder chatClientBuilder, ServicoRepository servicoRepository) {
     this.chatClientBuilder = chatClientBuilder;
-    this.campanhaRepository = campanhaRepository;
+    this.servicoRepository = servicoRepository;
   }
 
   public String run(String userPrompt) {
@@ -30,11 +30,9 @@ public class SpringAIChatService {
   }
 
   public String getCampaignDetailsById(Long id) {
-    Campanha campanha = campanhaRepository.findById(id)
+    Servico servico = servicoRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Campanha não encontrada"));
 
-    return String.format(
-        "Estou fazendo uma campanha de marketing com as seguintes informações: Título: %s, Descrição: %s, Público Alvo: %s, Período de Realização: %s. Poderia me informar se você pensa que a mesma terá sucesso?",
-        campanha.getTitulo(), campanha.getDescricao(), campanha.getPublicoAlvo(), campanha.getPeriodoRealizacao());
+    return String.format("");
   }
 }
