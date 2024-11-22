@@ -42,7 +42,7 @@ public class ClienteViewController {
 
   @GetMapping("/novo")
   public String novoCliente(Model model) {
-    model.addAttribute("clienteRequestDTO", new ClienteRequestDTO("", "", "", null, null));
+    model.addAttribute("clienteRequestDTO", new ClienteRequestDTO("", "",null, "",  "", null, null));
     model.addAttribute("regioes", Regiao.values());  
     model.addAttribute("tiposPropriedade", TipoPropriedade.values()); 
     return "clientes/novo";

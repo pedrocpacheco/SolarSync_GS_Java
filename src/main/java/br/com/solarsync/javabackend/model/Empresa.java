@@ -3,7 +3,7 @@ package br.com.solarsync.javabackend.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "TB_SP3_EMPRESA")
+@Table(name = "TB_SOLARSYNC_EMPRESA")
 public class Empresa {
 
     @Id
@@ -13,6 +13,12 @@ public class Empresa {
 
     @Column(name = "nm_empresa")
     private String nome;
+
+    @Column(name = "descricao_empresa", columnDefinition = "TEXT")
+    private String descricaoEmpresa;
+
+    @Column(name = "producao_energetica_empresa")
+    private Long producaoEnergeticaKWH;
 
     @Column(name = "cnpj_empresa")
     private String cnpj;
@@ -34,14 +40,17 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(Long id, String nome, String cnpj, String email, String telefone, Regiao regiaoCobertura, TipoPropriedade tipoPropriedade) {
-        this.id = id;
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.email = email;
-        this.telefone = telefone;
-        this.regiaoCobertura = regiaoCobertura;
-        this.tipoPropriedade = tipoPropriedade;
+    public Empresa(Long id, String nome, String descricaoEmpresa, Long producaoEnergeticaKWH, String cnpj, String email,
+        String telefone, Regiao regiaoCobertura, TipoPropriedade tipoPropriedade) {
+      this.id = id;
+      this.nome = nome;
+      this.descricaoEmpresa = descricaoEmpresa;
+      this.producaoEnergeticaKWH = producaoEnergeticaKWH;
+      this.cnpj = cnpj;
+      this.email = email;
+      this.telefone = telefone;
+      this.regiaoCobertura = regiaoCobertura;
+      this.tipoPropriedade = tipoPropriedade;
     }
 
     // Getters e Setters
@@ -99,5 +108,29 @@ public class Empresa {
 
     public void setTipoPropriedade(TipoPropriedade tipoPropriedade) {
         this.tipoPropriedade = tipoPropriedade;
+    }
+
+
+
+    public String getDescricaoEmpresa() {
+        return descricaoEmpresa;
+    }
+
+
+
+    public void setDescricaoEmpresa(String descricaoEmpresa) {
+        this.descricaoEmpresa = descricaoEmpresa;
+    }
+
+
+
+    public Long getProducaoEnergeticaKWH() {
+        return producaoEnergeticaKWH;
+    }
+
+
+
+    public void setProducaoEnergeticaKWH(Long producaoEnergeticaKWH) {
+        this.producaoEnergeticaKWH = producaoEnergeticaKWH;
     }
 }

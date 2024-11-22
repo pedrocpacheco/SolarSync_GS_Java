@@ -82,7 +82,6 @@
   <div style="text-align: center; margin-top: 10px;">
     <a href="/empresas">Empresas</a>
     <a href="/campanhas">Campanhas</a>
-    <a href="/clientes/novo">Novo Cliente</a>
   </div>
 
   <h1>Lista de Clientes</h1>
@@ -91,6 +90,8 @@
     <thead>
       <tr>
         <th>Nome</th>
+        <th>Descrição do Cliente</th>
+        <th>Consumo Energetico KWH</th>
         <th>Email</th>
         <th>Região de Cobertura</th>
         <th>Tipo de Propriedade</th>
@@ -100,6 +101,8 @@
     <tbody>
       <tr th:each="cliente : ${clientes}">
         <td th:text="${cliente.nome}">Nome do Cliente</td>
+        <td th:text="${cliente.descricaoCliente}">Descrição do Cliente</td>
+        <td th:text="${cliente.consumoEnergeticoKWH}">Consumo Energetico KWH</td>
         <td th:text="${cliente.email}">Email do Cliente</td>
         <td th:text="${cliente.regiaoCobertura}">Região de Cobertura</td>
         <td th:text="${cliente.tipoPropriedade}">Tipo de Propriedade</td>
@@ -111,6 +114,8 @@
       </tr>
     </tbody>
   </table>
+  <a href="/clientes/novo">Novo Cliente</a>
+
 </body>
 
 </html>

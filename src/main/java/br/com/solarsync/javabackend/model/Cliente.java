@@ -3,16 +3,18 @@ package br.com.solarsync.javabackend.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "TB_SP3_CLIENTE")
+@Table(name = "TB_SOLARSYNC_CLIENTE")
 public class Cliente {
 
   public Cliente() {
   }
 
-  public Cliente(Long id, String nome, String email, String password, Regiao regiaoCobertura,
-      TipoPropriedade tipoPropriedade) {
+  public Cliente(Long id, String nome, String descricaoCliente, Long consumoEnergeticoKWH, String email,
+      String password, Regiao regiaoCobertura, TipoPropriedade tipoPropriedade) {
     this.id = id;
     this.nome = nome;
+    this.descricaoCliente = descricaoCliente;
+    this.consumoEnergeticoKWH = consumoEnergeticoKWH;
     this.email = email;
     this.password = password;
     this.regiaoCobertura = regiaoCobertura;
@@ -25,6 +27,12 @@ public class Cliente {
 
   @Column(name = "nm_cliente")
   private String nome;
+
+  @Column(name = "descricao_cliente", columnDefinition = "TEXT")
+  private String descricaoCliente;
+
+  @Column(name = "consumo_energetico_cliente")
+  private Long consumoEnergeticoKWH;
 
   @Column(name = "em_cliente")
   private String email;
@@ -86,6 +94,22 @@ public class Cliente {
 
   public void setTipoPropriedade(TipoPropriedade tipoPropriedade) {
     this.tipoPropriedade = tipoPropriedade;
+  }
+
+  public String getDescricaoCliente() {
+    return descricaoCliente;
+  }
+
+  public void setDescricaoCliente(String descricaoCliente) {
+    this.descricaoCliente = descricaoCliente;
+  }
+
+  public Long getConsumoEnergeticoKWH() {
+    return consumoEnergeticoKWH;
+  }
+
+  public void setConsumoEnergeticoKWH(Long consumoEnergeticoKWH) {
+    this.consumoEnergeticoKWH = consumoEnergeticoKWH;
   }
 
   

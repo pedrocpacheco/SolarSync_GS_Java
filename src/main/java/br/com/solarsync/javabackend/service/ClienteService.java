@@ -71,6 +71,8 @@ public class ClienteService {
   private Cliente fromDTO(ClienteRequestDTO dto) {
     Cliente cliente = new Cliente();
     cliente.setNome(dto.nome());
+    cliente.setDescricaoCliente(dto.descricaoCliente());
+    cliente.setConsumoEnergeticoKWH(dto.consumoEnergeticoKWH());
     cliente.setEmail(dto.email());
     cliente.setPassword(dto.password());
     cliente.setRegiaoCobertura(dto.regiaoCobertura());
@@ -79,7 +81,7 @@ public class ClienteService {
   }
 
   private ClienteResponseDTO toDTO(Cliente cliente) {
-    return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getPassword(), cliente.getRegiaoCobertura(),
+    return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getDescricaoCliente(), cliente.getConsumoEnergeticoKWH(), cliente.getEmail(), cliente.getPassword(), cliente.getRegiaoCobertura(),
        cliente.getTipoPropriedade());
   }
 

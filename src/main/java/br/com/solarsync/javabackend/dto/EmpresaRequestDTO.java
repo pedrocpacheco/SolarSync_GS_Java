@@ -2,6 +2,7 @@ package br.com.solarsync.javabackend.dto;
 
 import br.com.solarsync.javabackend.model.Regiao;
 import br.com.solarsync.javabackend.model.TipoPropriedade;
+import io.micrometer.common.lang.NonNull;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,6 +18,12 @@ public record EmpresaRequestDTO(
     @NotBlank(message = "O CNPJ é obrigatório.")
     @Pattern(regexp = "\\d{14}", message = "O CNPJ deve conter 14 dígitos.")
     String cnpj,
+
+    @NotBlank(message = "A descricao não pode ser nula")
+    String descricaoEmpresa,
+
+    @NotNull(message = "A produção energetica não pode ser nula")
+    Long producaoEnergeticaKWH,
 
     @NotBlank(message = "O email é obrigatório.")
     @Email(message = "O email deve ser válido.")

@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TB_SP3_CAMPANHA")
+@Table(name = "TB_SOLARSYNC_CAMPANHA")
 public class Campanha {
 
   @Id

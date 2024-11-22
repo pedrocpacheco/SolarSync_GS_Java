@@ -42,7 +42,7 @@ public class EmpresaViewController {
 
     @GetMapping("/novo")
     public String novaEmpresa(Model model) {
-        model.addAttribute("empresa", new EmpresaRequestDTO("", "", "", "", null, null));
+        model.addAttribute("empresa", new EmpresaRequestDTO("", "", "", null, "", "", null, null));
         model.addAttribute("regioes", Regiao.values());  
         model.addAttribute("tiposPropriedade", TipoPropriedade.values()); 
         return "empresas/novo"; 

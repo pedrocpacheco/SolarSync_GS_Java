@@ -47,11 +47,13 @@ public class EmpresaService {
         if (empresaOpt.isPresent()) {
             Empresa empresa = empresaOpt.get();
             empresa.setNome(empresaRequestDTO.nome());
+            empresa.setDescricaoEmpresa(empresaRequestDTO.descricaoEmpresa());
+            empresa.setProducaoEnergeticaKWH(empresaRequestDTO.producaoEnergeticaKWH());  // Optional.ofNullable(empresaRequestDTO.producaoEnergeticaKWH()).orElse(null)
             empresa.setCnpj(empresaRequestDTO.cnpj());
             empresa.setEmail(empresaRequestDTO.email());
             empresa.setTelefone(empresaRequestDTO.telefone());
-            empresa.setRegiaoCobertura(empresaRequestDTO.regiaoCobertura()); // Não precisa do valueOf
-            empresa.setTipoPropriedade(empresaRequestDTO.tipoPropriedade()); // Adicionando o tipoPropriedade
+            empresa.setRegiaoCobertura(empresaRequestDTO.regiaoCobertura()); 
+            empresa.setTipoPropriedade(empresaRequestDTO.tipoPropriedade()); 
 
             Empresa empresaAtualizada = empresaRepository.save(empresa);
             return toDTO(empresaAtualizada);
@@ -84,6 +86,8 @@ public class EmpresaService {
         return new EmpresaResponseDTO(
                 empresa.getId(),
                 empresa.getNome(),
+                empresa.getDescricaoEmpresa(),
+                empresa.getProducaoEnergeticaKWH(),
                 empresa.getCnpj(),
                 empresa.getEmail(),
                 empresa.getTelefone(),
