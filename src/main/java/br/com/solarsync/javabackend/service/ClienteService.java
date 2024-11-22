@@ -47,6 +47,8 @@ public class ClienteService {
     if (clienteOpt.isPresent()) {
       Cliente cliente = clienteOpt.get();
       cliente.setNome(clienteRequestDTO.nome());
+      cliente.setDescricaoCliente(clienteRequestDTO.descricaoCliente());
+      cliente.setConsumoEnergeticoKWH(clienteRequestDTO.consumoEnergeticoKWH()); 
       cliente.setEmail(clienteRequestDTO.email());
       cliente.setPassword(clienteRequestDTO.password());
       cliente.setRegiaoCobertura(clienteRequestDTO.regiaoCobertura()); 

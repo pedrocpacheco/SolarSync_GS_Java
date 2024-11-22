@@ -2,7 +2,6 @@ package br.com.solarsync.javabackend.dto;
 
 import br.com.solarsync.javabackend.model.Regiao;
 import br.com.solarsync.javabackend.model.TipoPropriedade;
-import io.micrometer.common.lang.NonNull;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
