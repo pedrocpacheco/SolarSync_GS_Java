@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.solarsync.javabackend.dto.ClienteRequestDTO;
 import br.com.solarsync.javabackend.dto.ClienteResponseDTO;
-import br.com.solarsync.javabackend.model.Escolaridade;
-import br.com.solarsync.javabackend.model.EstadoCivil;
-import br.com.solarsync.javabackend.model.Genero;
+import br.com.solarsync.javabackend.model.Regiao;
+import br.com.solarsync.javabackend.model.TipoPropriedade;
 import br.com.solarsync.javabackend.service.ClienteService;
 
 @Controller
@@ -43,10 +42,9 @@ public class ClienteViewController {
 
   @GetMapping("/novo")
   public String novoCliente(Model model) {
-    model.addAttribute("clienteRequestDTO", new ClienteRequestDTO("", "", "", null, null, null));
-    model.addAttribute("escolaridades", Escolaridade.values());
-    model.addAttribute("estadosCivis", EstadoCivil.values());
-    model.addAttribute("generos", Genero.values());
+    model.addAttribute("clienteRequestDTO", new ClienteRequestDTO("", "", "", null, null));
+    model.addAttribute("regioes", Regiao.values());  
+    model.addAttribute("tiposPropriedade", TipoPropriedade.values()); 
     return "clientes/novo";
   }
 
@@ -65,9 +63,8 @@ public class ClienteViewController {
       System.out.println("Cliente carregado para edição: " + cliente.nome());
     }
     model.addAttribute("cliente", cliente);
-    model.addAttribute("escolaridades", Escolaridade.values());
-    model.addAttribute("estadosCivis", EstadoCivil.values());
-    model.addAttribute("generos", Genero.values());
+    model.addAttribute("regioes", Regiao.values()); 
+    model.addAttribute("tiposPropriedade", TipoPropriedade.values());  
     return "clientes/editar";
   }
 

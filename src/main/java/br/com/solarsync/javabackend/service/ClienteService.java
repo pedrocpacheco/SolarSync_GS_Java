@@ -49,9 +49,8 @@ public class ClienteService {
       cliente.setNome(clienteRequestDTO.nome());
       cliente.setEmail(clienteRequestDTO.email());
       cliente.setPassword(clienteRequestDTO.password());
-      cliente.setEscolaridade(clienteRequestDTO.escolaridade()); // Atualizando escolaridade
-      cliente.setEstadoCivil(clienteRequestDTO.estadoCivil()); // Atualizando estado civil
-      cliente.setGenero(clienteRequestDTO.genero()); // Atualizando gênero
+      cliente.setRegiaoCobertura(clienteRequestDTO.regiaoCobertura()); 
+      cliente.setTipoPropriedade(clienteRequestDTO.tipoPropriedade()); 
 
       Cliente clienteAtualizado = clienteRepository.save(cliente);
       return toDTO(clienteAtualizado);
@@ -74,15 +73,14 @@ public class ClienteService {
     cliente.setNome(dto.nome());
     cliente.setEmail(dto.email());
     cliente.setPassword(dto.password());
-    cliente.setEscolaridade(dto.escolaridade());
-    cliente.setEstadoCivil(dto.estadoCivil());
-    cliente.setGenero(dto.genero());
+    cliente.setRegiaoCobertura(dto.regiaoCobertura());
+    cliente.setTipoPropriedade(dto.tipoPropriedade());
     return cliente;
   }
 
   private ClienteResponseDTO toDTO(Cliente cliente) {
-    return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getEscolaridade(),
-        cliente.getEstadoCivil(), cliente.getGenero());
+    return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getEmail(), cliente.getPassword(), cliente.getRegiaoCobertura(),
+       cliente.getTipoPropriedade());
   }
 
   public ClienteResponseDTO buscarPorId(Long id) {

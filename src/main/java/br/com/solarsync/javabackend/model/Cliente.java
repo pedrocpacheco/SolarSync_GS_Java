@@ -9,15 +9,14 @@ public class Cliente {
   public Cliente() {
   }
 
-  public Cliente(Long id, String nome, String email, String password, Escolaridade escolaridade,
-      EstadoCivil estadoCivil, Genero genero, Campanha campanha) {
+  public Cliente(Long id, String nome, String email, String password, Regiao regiaoCobertura,
+      TipoPropriedade tipoPropriedade) {
     this.id = id;
     this.nome = nome;
     this.email = email;
     this.password = password;
-    this.escolaridade = escolaridade;
-    this.estadoCivil = estadoCivil;
-    this.genero = genero;
+    this.regiaoCobertura = regiaoCobertura;
+    this.tipoPropriedade = tipoPropriedade;
   }
 
   @Id
@@ -34,16 +33,12 @@ public class Cliente {
   private String password;
 
   @Enumerated(EnumType.STRING)
-  @Column(name = "escolaridade")
-  private Escolaridade escolaridade;
+  @Column(name = "regiao_cobertura_cliente")
+  private Regiao regiaoCobertura;
 
   @Enumerated(EnumType.STRING)
-  @Column(name = "estado_civil")
-  private EstadoCivil estadoCivil;
-
-  @Enumerated(EnumType.STRING)
-  @Column(name = "genero")
-  private Genero genero;
+  @Column(name = "tipo_propriedade_cliente")
+  private TipoPropriedade tipoPropriedade;
 
   public Long getId() {
     return id;
@@ -77,28 +72,22 @@ public class Cliente {
     this.password = password;
   }
 
-  public Escolaridade getEscolaridade() {
-    return escolaridade;
+  public Regiao getRegiaoCobertura() {
+    return regiaoCobertura;
   }
 
-  public void setEscolaridade(Escolaridade escolaridade) {
-    this.escolaridade = escolaridade;
+  public void setRegiaoCobertura(Regiao regiaoCobertura) {
+    this.regiaoCobertura = regiaoCobertura;
   }
 
-  public EstadoCivil getEstadoCivil() {
-    return estadoCivil;
+  public TipoPropriedade getTipoPropriedade() {
+    return tipoPropriedade;
   }
 
-  public void setEstadoCivil(EstadoCivil estadoCivil) {
-    this.estadoCivil = estadoCivil;
+  public void setTipoPropriedade(TipoPropriedade tipoPropriedade) {
+    this.tipoPropriedade = tipoPropriedade;
   }
 
-  public Genero getGenero() {
-    return genero;
-  }
-
-  public void setGenero(Genero genero) {
-    this.genero = genero;
-  }
+  
 
 }

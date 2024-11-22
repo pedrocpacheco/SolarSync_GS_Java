@@ -1,14 +1,13 @@
 package br.com.solarsync.javabackend.dto;
 
-import br.com.solarsync.javabackend.model.Escolaridade;
-import br.com.solarsync.javabackend.model.EstadoCivil;
-import br.com.solarsync.javabackend.model.Genero;
+import br.com.solarsync.javabackend.model.Regiao;
+import br.com.solarsync.javabackend.model.TipoPropriedade;
 
 public record ClienteResponseDTO(
     Long id,
     String nome,
     String email,
-    Escolaridade escolaridade,
-    EstadoCivil estadoCivil,
-    Genero genero) {
+    String password,
+    Regiao regiaoCobertura,
+    TipoPropriedade tipoPropriedade) {
 }

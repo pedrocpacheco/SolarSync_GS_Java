@@ -1,8 +1,7 @@
 package br.com.solarsync.javabackend.dto;
 
-import br.com.solarsync.javabackend.model.Escolaridade;
-import br.com.solarsync.javabackend.model.EstadoCivil;
-import br.com.solarsync.javabackend.model.Genero;
+import br.com.solarsync.javabackend.model.Regiao;
+import br.com.solarsync.javabackend.model.TipoPropriedade;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -16,9 +15,7 @@ public record ClienteRequestDTO(
 
     @NotBlank(message = "A senha é obrigatória.") @Size(min = 8, message = "A senha deve ter pelo menos 8 caracteres.") String password,
 
-    @NotNull(message = "A escolaridade é obrigatória.") Escolaridade escolaridade,
+    @NotNull(message = "A região de cobertura é obrigatória.") Regiao regiaoCobertura,
 
-    @NotNull(message = "O estado civil é obrigatório.") EstadoCivil estadoCivil,
-
-    @NotNull(message = "O gênero é obrigatório.") Genero genero) {
+    @NotNull(message = "O tipo de propriedade é obrigatório.") TipoPropriedade tipoPropriedade) {
 }
