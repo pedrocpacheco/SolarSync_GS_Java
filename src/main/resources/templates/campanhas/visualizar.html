@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Visualizar Campanha</title>
+  <style>
+    /* Estilo Global */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Cabeçalho */
+    h1 {
+      color: #4CAF50;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Links */
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilo da Tabela */
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Detalhes da Campanha</h1>
+  <p><strong>ID:</strong> <span th:text="${campanha.id}"></span></p>
+  <p><strong>Título:</strong> <span th:text="${campanha.titulo}"></span></p>
+  <p><strong>Clicks Efetivos:</strong> <span th:text="${campanha.clicksEfetivos}"></span></p>
+  <p><strong>Descrição:</strong> <span th:text="${campanha.descricao}"></span></p>
+  <p><strong>Público Alvo:</strong> <span th:text="${campanha.publicoAlvo}"></span></p>
+  <p><strong>Período de Realização:</strong> <span th:text="${campanha.periodoRealizacao}"></span></p>
+
+  <!-- Novo campo: Produto -->
+  <p><strong>Produto:</strong> <span th:text="${campanha.produto}"></span></p>
+
+  <!-- Novo campo: Meio de Comunicação -->
+  <p><strong>Meio de Comunicação:</strong> <span th:text="${campanha.meioComunicacao}"></span></p>
+
+  <!-- Empresa relacionada -->
+  <p><strong>Empresa Associada:</strong> <span th:text="${campanha.empresa?.nome}"></span></p>
+
+  <a href="/campanhas">Voltar</a>
+</body>
+
+</html>
