@@ -112,6 +112,13 @@ public class Cliente {
     this.consumoEnergeticoKWH = consumoEnergeticoKWH;
   }
 
+  @Override
+  public String toString() {
+    return "Cliente [id=" + id + ", nome=" + nome + ", descricaoCliente=" + descricaoCliente + ", consumoEnergeticoKWH="
+        + consumoEnergeticoKWH + ", email=" + email + ", regiaoCobertura=" + regiaoCobertura
+        + ", tipoPropriedade=" + tipoPropriedade + "]";
+  }
+
   
 
 }

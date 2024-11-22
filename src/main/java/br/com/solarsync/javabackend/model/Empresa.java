@@ -133,4 +133,13 @@ public class Empresa {
     public void setProducaoEnergeticaKWH(Long producaoEnergeticaKWH) {
         this.producaoEnergeticaKWH = producaoEnergeticaKWH;
     }
+
+    @Override
+    public String toString() {
+      return "Empresa [id=" + id + ", nome=" + nome + ", descricaoEmpresa=" + descricaoEmpresa
+          + ", producaoEnergeticaKWH=" + producaoEnergeticaKWH + ", cnpj=" + cnpj + ", email=" + email + ", telefone="
+          + telefone + ", regiaoCobertura=" + regiaoCobertura + ", tipoPropriedade=" + tipoPropriedade + "]";
+    }
+
+    
 }

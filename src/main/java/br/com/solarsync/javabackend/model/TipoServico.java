@@ -2,11 +2,15 @@ package br.com.solarsync.javabackend.model;
 
 public enum TipoServico {
   LIMPEZA,
-  ELETRICIDADE,
-  JARDINAGEM,
   SEGURANÇA,
   MANUTENÇÃO,
-  IT_SUPPORT,
+  SUPORTE_TI,
   CONSULTORIA,
-  DESENVOLVIMENTO
+  DESENVOLVIMENTO,
+  AGRICULTURA,
+  PECUARIA,
+  INDUSTRIA, 
+  MUSICAL,
+  RESIDENCIAL,
+  FIM_LUCRATIVO
 }

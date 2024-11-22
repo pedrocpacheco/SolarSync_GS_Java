@@ -74,6 +74,8 @@ public class EmpresaService {
     private Empresa fromDTO(EmpresaRequestDTO dto) {
         Empresa empresa = new Empresa();
         empresa.setNome(dto.nome());
+        empresa.setDescricaoEmpresa(dto.descricaoEmpresa());
+        empresa.setProducaoEnergeticaKWH(dto.producaoEnergeticaKWH());  
         empresa.setCnpj(dto.cnpj());
         empresa.setEmail(dto.email());
         empresa.setTelefone(dto.telefone());

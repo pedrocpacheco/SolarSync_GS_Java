@@ -10,7 +10,8 @@ public enum TipoPropriedade {
     VILA("Vila"),
     CHALE("Chalé"),
     DUPLEX("Duplex"),
-    BANGALO("Bangalo");
+    BANGALO("Bangalo"),
+    GALPAO("Galpao");
 
     private final String descricao;
 

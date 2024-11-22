@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "TB_SOLARSYNC_CLIENTE")
+@Table(name = "TB_SOLARSYNC_SERVICO")
 public class Servico {
   
   public Servico() {
@@ -93,6 +93,10 @@ public class Servico {
     this.tipoServico = tipoServico;
   }
 
-  
+  @Override
+  public String toString() {
+    return "Servico [id=" + id + ", tituloServico=" + tituloServico + ", descricaoServico=" + descricaoServico
+        + ", tipoServico=" + tipoServico + "]";
+  }
 
 }
