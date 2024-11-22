@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Clientes</title>
+  <title>Serviços</title>
   <style>
     /* Estilo Global */
     body {
@@ -80,43 +80,39 @@
 
 <body>
   <div style="text-align: center; margin-top: 10px;">
+    <a href="/clientes">Clientes</a>
     <a href="/empresas">Empresas</a>
-    <a href="/servicos">Servicos</a>
   </div>
 
-  <h1>Lista de Clientes</h1>
+  <h1>Lista de Serviços</h1>
 
   <table>
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Descrição do Cliente</th>
-        <th>Consumo Energetico KWH</th>
-        <th>Email</th>
-        <th>Região de Cobertura</th>
-        <th>Tipo de Propriedade</th>
+        <th>Titulo</th>
+        <th>Descrição</th>
+        <th>Tipo</th>
+        <th>ID Cliente</th>
+        <th>ID Empresa</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr th:each="cliente : ${clientes}">
-        <td th:text="${cliente.id}">ID</td>
-        <td th:text="${cliente.nome}">Nome do Cliente</td>
-        <td th:text="${cliente.descricaoCliente}">Descrição do Cliente</td>
-        <td th:text="${cliente.consumoEnergeticoKWH}">Consumo Energetico KWH</td>
-        <td th:text="${cliente.email}">Email do Cliente</td>
-        <td th:text="${cliente.regiaoCobertura}">Região de Cobertura</td>
-        <td th:text="${cliente.tipoPropriedade}">Tipo de Propriedade</td>
+      <tr th:each="servico : ${servicos}">
+        <td th:text="${servico.tituloServico}"></td>
+        <td th:text="${servico.descricaoServico}"></td>
+        <td th:text="${servico.tipoServico}"></td>
+        <td th:text="${servico.idCliente}"></td>
+        <td th:text="${servico.idEmpresa}"></td>
         <td>
-          <a th:href="@{/clientes/visualizar/{id}(id=${cliente.id})}">Visualizar</a> |
-          <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a> |
-          <a th:href="@{/clientes/deletar/{id}(id=${cliente.id})}" onclick="return confirm('Tem certeza que deseja deletar este cliente?')">Deletar</a>
+          <a th:href="@{/servicos/visualizar/{id}(id=${servico.id})}">Visualizar</a> |
+          <a th:href="@{/servicos/editar/{id}(id=${servico.id})}">Editar</a> |
+          <a th:href="@{/servicos/deletar/{id}(id=${servico.id})}" onclick="return confirm('Tem certeza que deseja deletar este serviço?')">Deletar</a>
         </td>
       </tr>
     </tbody>
   </table>
-  <a href="/clientes/novo">Novo Cliente</a>
+  <a href="/servicos/novo">Novo Serviço</a>
 
 </body>
 

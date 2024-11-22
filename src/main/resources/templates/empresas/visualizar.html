@@ -6,140 +6,144 @@
   <style>
     /* Estilo Global */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
       color: #333;
     }
 
+    /* Container principal */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
     /* Cabeçalho */
     h1 {
       color: #ff9223;
       text-align: center;
-      margin-top: 20px;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* Subtítulos */
+    h2 {
+      font-size: 22px;
+      color: #333;
+      margin-top: 30px;
+      border-bottom: 2px solid #ff9223;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     /* Links */
     a {
       color: #ff9223;
       text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
+    /* Detalhes gerais */
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Texto em destaque */
+    strong {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Linha de separação */
+    hr {
+      border: 0;
+      border-top: 2px solid #f1f1f1;
+      margin: 30px 0;
+    }
+
     /* Botões */
     button {
-      padding: 10px;
+      padding: 10px 20px;
       color: white;
       background-color: #ff9223;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
-      margin-top: 10px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
       background-color: #e67f1f;
     }
 
-    /* Formulário */
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      margin: 20px auto;
+    /* Seção de Informações */
+    .info-section {
+      margin-bottom: 30px;
       padding: 20px;
       background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      margin: 10px 0 5px;
-      font-size: 16px;
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    select {
-      padding: 12px;
-      margin-bottom: 15px;
       border: 1px solid #ddd;
-      border-radius: 4px;
-      width: 100%;
-      font-size: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Estilo de Tabela */
-    table {
-      width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #ff9223;
-      color: white;
-      font-weight: bold;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    tbody tr:hover {
-      background-color: #f1f1f1;
-    }
-
-    /* Estilo para mensagens de feedback */
-    .alert {
-      padding: 10px;
-      margin: 10px auto;
-      max-width: 500px;
-      border: 1px solid #ff9223;
-      border-radius: 4px;
-      background-color: #ffe5d1;
-      color: #d85f18;
+    .info-section p {
+      margin-bottom: 10px;
     }
 
     /* Responsividade */
     @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+
       h1 {
         font-size: 24px;
       }
-      form {
-        max-width: 90%;
-        padding: 15px;
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
       }
     }
-</style>
-
-
+  </style>
 </head>
 
 <body>
-  <h1>Visualizar Empresa</h1>
-  <p><strong>ID:</strong> <span th:text="${empresa.id}"></span></p>
-  <p><strong>Nome:</strong> <span th:text="${empresa.nome}"></span></p>
-  <p><strong>CNPJ:</strong> <span th:text="${empresa.cnpj}"></span></p>
-  <p><strong>Email:</strong> <span th:text="${empresa.email}"></span></p>
-  <p><strong>Telefone:</strong> <span th:text="${empresa.telefone}"></span></p>
-  <p><strong>Região de Cobertura:</strong> <span th:text="${empresa.regiaoCobertura}"></span></p>
-  <p><strong>Tipo de Propriedade:</strong> <span th:text="${empresa.tipoPropriedade}"></span></p>
-  <a href="/empresas">Voltar</a>
+  <div class="container">
+    <h1>Visualizar Empresa</h1>
+
+    <div class="info-section">
+      <h2>Informações Empresa</h2>
+      <p><strong>ID:</strong> <span th:text="${empresa.id}"></span></p>
+      <p><strong>Nome Empresa: </strong> <span th:text="${empresa.nome}"></span></p>
+      <p><strong>Descrição Empresa:</strong> <span th:text="${empresa.descricaoEmpresa}"></span></p>
+      <p><strong>Produção Energética KWH:</strong> <span th:text="${empresa.producaoEnergeticaKWH}"></span></p>
+      <p><strong>CNPJ Empresa:</strong> <span th:text="${empresa.cnpj}"></span></p>
+      <p><strong>Email Empresa:</strong> <span th:text="${empresa.email}"></span></p>
+      <p><strong>Telefone Empresa:</strong> <span th:text="${empresa.telefone}"></span></p>
+      <p><strong>Região Cobertura:</strong> <span th:text="${empresa.regiaoCobertura}"></span></p>
+      <p><strong>Tipo Propriedade:</strong> <span th:text="${empresa.tipoPropriedade}"></span></p>
+    </div>
+
+    <a href="/empresas" class="button">Voltar</a>
+  </div>
 </body>
 
 </html>

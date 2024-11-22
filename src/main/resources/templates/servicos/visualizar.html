@@ -127,7 +127,15 @@
 
 <body>
   <div class="container">
-    <h1>Visualizar Cliente</h1>
+    <h1>Visualizar Serviço</h1>
+
+    <div class="info-section">
+      <h2>Informações do Serviço</h2>
+      <p><strong>ID:</strong> <span th:text="${servico.id}"></span></p>
+      <p><strong>Título Serviço:</strong> <span th:text="${servico.tituloServico}"></span></p>
+      <p><strong>Descrição Serviço:</strong> <span th:text="${servico.descricaoServico}"></span></p>
+      <p><strong>Tipo Serviço:</strong> <span th:text="${servico.tipoServico}"></span></p>
+    </div>
 
     <hr>
 
@@ -144,7 +152,20 @@
 
     <hr>
 
-    <a href="/clientes" class="button">Voltar</a>
+    <div class="info-section">
+      <h2>Informações Empresa</h2>
+      <p><strong>ID:</strong> <span th:text="${empresa.id}"></span></p>
+      <p><strong>Nome Empresa:</strong> <span th:text="${empresa.nome}"></span></p>
+      <p><strong>Descrição Empresa:</strong> <span th:text="${empresa.descricaoEmpresa}"></span></p>
+      <p><strong>Produção Energética KWH:</strong> <span th:text="${empresa.producaoEnergeticaKWH}"></span></p>
+      <p><strong>CNPJ Empresa:</strong> <span th:text="${empresa.cnpj}"></span></p>
+      <p><strong>Email Empresa:</strong> <span th:text="${empresa.email}"></span></p>
+      <p><strong>Telefone Empresa:</strong> <span th:text="${empresa.telefone}"></span></p>
+      <p><strong>Região Cobertura:</strong> <span th:text="${empresa.regiaoCobertura}"></span></p>
+      <p><strong>Tipo Propriedade:</strong> <span th:text="${empresa.tipoPropriedade}"></span></p>
+    </div>
+
+    <a href="/servicos" class="button">Voltar</a>
   </div>
 </body>
 

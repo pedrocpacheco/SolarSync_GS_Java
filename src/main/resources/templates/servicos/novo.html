@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Empresas</title>
+  <title>Criar Serviço</title>
   <style>
     /* Estilo Global */
     body {
@@ -64,7 +64,6 @@
     }
 
     input[type="text"],
-    input[type="tel"],
     input[type="email"],
     select {
       padding: 12px;
@@ -125,48 +124,38 @@
         padding: 15px;
       }
     }
-</style>
-
-
+  </style>
 </head>
 
 <body>
-  <div style="text-align: center; margin-top: 10px;">
-    <a href="/clientes">Clientes</a>
-    <a href="/Servicos">Servicos</a>
-  </div>
-  <h1>Empresas</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>CNPJ</th>
-        <th>Email</th>
-        <th>Telefone</th>
-        <th>Região de Cobertura</th>
-        <th>Tipo de Propriedade</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr th:each="empresa : ${empresas}">
-        <td th:text="${empresa.id}"></td>
-        <td th:text="${empresa.nome}"></td>
-        <td th:text="${empresa.cnpj}"></td>
-        <td th:text="${empresa.email}"></td>
-        <td th:text="${empresa.telefone}"></td>
-        <td th:text="${empresa.regiaoCobertura}"></td>
-        <td th:text="${empresa.tipoPropriedade}"></td>
-        <td>
-          <a th:href="@{/empresas/{id}(id=${empresa.id})}">Visualizar</a>
-          <a th:href="@{/empresas/editar/{id}(id=${empresa.id})}">Editar</a>
-          <a th:href="@{/empresas/deletar/{id}(id=${empresa.id})}" onclick="return confirm('Tem certeza?')">Deletar</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <a href="/empresas/novo">Nova Empresa</a>
+  <h1>Criar Serviço</h1>
+  <form th:action="@{/servicos/novo}" th:object="${servicoRequestDTO}" method="post">
+    <label for="tituloServico">Titulo:</label>
+    <input type="text" id="tituloServico" th:field="*{tituloServico}" />
+    <br />
+    <label for="descricaoServico">Descrição:</label>
+    <input type="text" id="descricaoServico" th:field="*{descricaoServico}" />
+    <br />
+    <label for="tipoServico">Tipo de Serviço:</label>
+    <select id="tipoServico" th:field="*{tipoServico}" required>
+      <option th:each="tipo : ${tiposServico}" 
+        th:value="${tipo}" 
+        th:text="${tipo}">Selecione</option>
+    </select>
+    <br />
+    
+    <label for="idCliente">ID Cliente:</label>
+    <input type="text" id="idCliente" th:field="*{idCliente}" />
+    <br />
+    
+    <label for="idEmpresa">ID Empresa:</label>
+    <input type="text" id="idEmpresa" th:field="*{idEmpresa}" />
+    <br />
+    
+    
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="/servicos">Voltar</a>
 </body>
 
 </html>

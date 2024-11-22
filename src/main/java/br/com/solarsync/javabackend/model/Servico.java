@@ -15,12 +15,14 @@ public class Servico {
   public Servico() {
   }
 
-  public Servico(Long id, String tituloServico, String descricaoServico, Long idCliente, Long idEmpresa) {
+  public Servico(Long id, String tituloServico, String descricaoServico, Long idCliente, Long idEmpresa,
+      TipoServico tipoServico) {
     this.id = id;
     this.tituloServico = tituloServico;
     this.descricaoServico = descricaoServico;
     this.idCliente = idCliente;
     this.idEmpresa = idEmpresa;
+    this.tipoServico = tipoServico;
   }
 
   @Id
@@ -34,11 +36,14 @@ public class Servico {
   @Column(name = "descricao_servico", columnDefinition = "TEXT")
   private String descricaoServico;
   
-  @Column(name = "id_cliente")
+  @Column(name = "id_cliente_servico")
   private Long idCliente;
 
-  @Column(name = "id_Empresa")
+  @Column(name = "id_empresa_servico")
   private Long idEmpresa;
+
+  @Column(name = "tipo_sevico")
+  private TipoServico tipoServico;
 
   public Long getId() {
     return id;
@@ -78,6 +83,14 @@ public class Servico {
 
   public void setIdEmpresa(Long idEmpresa) {
     this.idEmpresa = idEmpresa;
+  }
+
+  public TipoServico getTipoServico() {
+    return tipoServico;
+  }
+
+  public void setTipoServico(TipoServico tipoServico) {
+    this.tipoServico = tipoServico;
   }
 
   

@@ -31,7 +31,7 @@ public class SecurityConfigurations {
             .requestMatchers("/auth/**").permitAll()
 
             // Permitir acesso às páginas HTML do Thymeleaf sem autenticação
-            .requestMatchers("/clientes/**", "/empresas/**", "/campanhas/**").permitAll()
+            .requestMatchers("/clientes/**", "/empresas/**", "/campanhas/**", "/servicos/**").permitAll()
 
             // Configurar permissões para os endpoints de API das entidades
             .requestMatchers(HttpMethod.GET, "/api/clientes/**").hasAnyRole("USER", "ADMIN")
@@ -42,10 +42,10 @@ public class SecurityConfigurations {
             .requestMatchers(HttpMethod.POST, "/api/empresas/**").hasRole("ADMIN")
             .requestMatchers(HttpMethod.PUT, "/api/empresas/**").hasRole("ADMIN")
             .requestMatchers(HttpMethod.DELETE, "/api/empresas/**").hasRole("ADMIN")
-            .requestMatchers(HttpMethod.GET, "/api/campanhas/**").hasAnyRole("USER", "ADMIN")
-            .requestMatchers(HttpMethod.POST, "/api/campanhas/**").hasRole("ADMIN")
-            .requestMatchers(HttpMethod.PUT, "/api/campanhas/**").hasRole("ADMIN")
-            .requestMatchers(HttpMethod.DELETE, "/api/campanhas/**").hasRole("ADMIN")
+            .requestMatchers(HttpMethod.GET, "/api/servicos/**").hasAnyRole("USER", "ADMIN")
+            .requestMatchers(HttpMethod.POST, "/api/servicos/**").hasRole("ADMIN")
+            .requestMatchers(HttpMethod.PUT, "/api/servicos/**").hasRole("ADMIN")
+            .requestMatchers(HttpMethod.DELETE, "/api/servicos/**").hasRole("ADMIN")
 
             // Exigir autenticação para qualquer outra requisição não configurada acima
             .anyRequest().authenticated())
