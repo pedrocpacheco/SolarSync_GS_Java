@@ -1,0 +1,25 @@
+meta {
+  name: Servicos POST
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/servicos
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6IlBlZHJvIiwiZXhwIjoxNzMyMzAxOTMzfQ.7fuZB8DI9qfL7RLI_yE1jCbKadYQejVff5Cjfr8LDSY
+}
+
+body:json {
+  {
+    "tituloServico": "Manutenção Avançada",
+    "descricaoServico": "Serviço completo de manutenção e otimização de sistemas solares.",
+    "idCliente": 1,
+    "idEmpresa": 2,
+    "tipoServico": "ELETRICIDADE"
+  }
+}
