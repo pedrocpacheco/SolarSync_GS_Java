@@ -59,19 +59,67 @@ $ git clone https://github.com/pedrocpacheco/SolarSync_GS_Java
 #Clique com o botão direito na classe ApiAnallyzerApplication
 #Run as -> Java Application
 ```
+### 🎥 Vídeo Explicativo
+https://youtu.be/L-YYX8WWB8I
 
-#### Acesse as páginas HTML de Clientes:
+### 🎥 Vídeo Pitch
+https://youtu.be/od8EunHgmUY
+
+
+## Links LocalHost 🏠:
+
+### Acessar páginas HTML 📄:
+
+#### Página HTML de Clientes 🧑‍💼:
 http://localhost:8080/clientes
 
-### #Acesse as páginas HTML de Empresas:
+#### Páginas HTML de Empresas 🏢:
 http://localhost:8080/empresas
 
-
-### #Acesse as páginas HTML de Serviços:
+#### Página HTML de Serviços 🤝:
 http://localhost:8080/servicos
 
-## 🎥 Vídeo Explicativo
-https://youtu.be/L-YYX8WWB8I
+### Acessar Endpoints API 🧩:
 
-## 🎥 Vídeo Pitch
-https://youtu.be/L-YYX8WWB8I
+#### Endpoint da API de Clientes 🧑‍💼:
+http://localhost:8080/api/clientes
+
+#### Endpoint da API de Empresas 🏢:
+http://localhost:8080/api/empresas
+
+#### Endpoint da API de Serviços 🤝:
+http://localhost:8080/api/servicos
+
+
+## Links Deploy 🌐:
+
+### Acessar páginas HTML 📄:
+
+#### Página HTML de Clientes 🧑‍💼: 
+https://projeto-java-production.up.railway.app/clientes
+
+#### Páginas HTML de Empresas 🏢:
+https://projeto-java-production.up.railway.app/empresas
+
+#### Página HTML de Serviços 🤝:
+https://projeto-java-production.up.railway.app/servicos
+
+### Acessar Endpoints API 🧩:
+
+#### Endpoint da API de Clientes 🧑‍💼:
+https://projeto-java-production.up.railway.app/api/clientes
+
+#### Endpoint da API de Empresas 🏢:
+https://projeto-java-production.up.railway.app/api/empresas
+
+#### Endpoint da API de Serviços 🤝:
+https://projeto-java-production.up.railway.app/api/servicos
+
+
+## Explicação
+
+Devido a plano de testes do Railway, e instabilidade da plataforma é capaz que o Deploy não esteja disponível na hora da avaliação. Normalmente o mesmo é reiniciado após inatividade, por isso também existem os endpoints via localhost.
+
+![Foto Deploy](assets/deploy.png)
+
+![Foto Página](assets/pagina.png)
