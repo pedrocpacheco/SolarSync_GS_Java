@@ -83,6 +83,12 @@ http://localhost:8080/servicos
 
 ### Acessar Endpoints API 🧩:
 
+#### Endpoint da API de Registro de Usuário do Sprint Security 🔒
+http://localhost:8080/auth/register 
+
+#### Endpoint da API de Login de Usuário do Sprint Security 🔑
+http://localhost:8080/auth/login
+
 #### Endpoint da API de Clientes 🧑‍💼:
 http://localhost:8080/api/clientes
 
@@ -110,6 +116,12 @@ https://projeto-java-production.up.railway.app/servicos
 ---
 
 ### Acessar Endpoints API 🧩:
+
+#### Endpoint da API de Registro de Usuário do Sprint Security 🔒
+http://projeto-java-production.up.railway.app/auth/register 
+
+#### Endpoint da API de Login de Usuário do Sprint Security 🔑
+http://projeto-java-production.up.railway.app/auth/login
 
 #### Endpoint da API de Clientes 🧑‍💼:
 https://projeto-java-production.up.railway.app/api/clientes
