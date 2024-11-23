@@ -145,3 +145,35 @@ Devido a plano de testes do Railway, e instabilidade da plataforma é capaz que 
 ![Foto Deploy](assets/deploy.png)
 
 ![Foto Página](assets/pagina.png)
+
+## Exemplo de Análise da IA 🤖:
+
+A nossa inteligencia artificial análise a Entidade Servico, que é o relacionamento entre uma entidade Cliente e Empresa, para entender se tal servico entre os dois (o fornecedor e receptor de energia) faz sentido de existir.
+
+Para esse contexto, vamos considerar.
+
+#### Exemplo de Cliente 🧑‍💼:
+![Foto Deploy](assets/cliente.png)
+
+#### Exemplo de Cliente 🏢:
+![Foto Deploy](assets/empresa.png)
+
+#### Exemplo de Serviço 🤝:
+![Foto Deploy](assets/servico.png)
+
+#### Retorno da IA Após analise 🧠:
+![Foto Deploy](assets/ia.png)
+
+- Perceba que a IA 🧠 foi capaz de entender que o Cliente 🧑‍💼 precisa de mais energia do que a Empresa 🏢 consegue gerar
+
+- Perceba que a IA 🧠 foi capaz de perceber que o Cliente 🧑‍💼 e a Empresa 🏢 estão em continentes diferentes
+
+- Perceba que a IA 🧠 foi capaz de analisar que o Cliente 🧑‍💼 deseja apenas alugar paineis solares, enquanto a Empresa 🏢 apenas deseja vende-los
+
+Nossa inteligência artificial 🧠 é capaz de entender os serviços 🤝 que serão realmente funcionais.
+
+## Arquivos Bruno para Testes de API
+
+Na pasta docs, você pode acessar o arquivo da SolarSync contendo todas as requisições HTTP já criadas na plataforma Bruno.
+
+![Foto Deploy](assets/bruno.png)
