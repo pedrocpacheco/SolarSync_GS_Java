@@ -67,6 +67,7 @@ https://youtu.be/od8EunHgmUY
 
 
 ## Links LocalHost 🏠:
+---
 
 ### Acessar páginas HTML 📄:
 
@@ -78,6 +79,8 @@ http://localhost:8080/empresas
 
 #### Página HTML de Serviços 🤝:
 http://localhost:8080/servicos
+
+---
 
 ### Acessar Endpoints API 🧩:
 
@@ -92,6 +95,7 @@ http://localhost:8080/api/servicos
 
 
 ## Links Deploy 🌐:
+---
 
 ### Acessar páginas HTML 📄:
 
@@ -103,6 +107,8 @@ https://projeto-java-production.up.railway.app/empresas
 
 #### Página HTML de Serviços 🤝:
 https://projeto-java-production.up.railway.app/servicos
+
+---
 
 ### Acessar Endpoints API 🧩:
 
