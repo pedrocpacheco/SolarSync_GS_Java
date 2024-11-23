@@ -98,6 +98,9 @@ http://localhost:8080/api/empresas
 #### Endpoint da API de Serviços 🤝:
 http://localhost:8080/api/servicos
 
+### Endpoint para Análise do Spring AI 🧠:
+https://localhost:8080/springai/generate/{id_servico}
+
 
 ## Links Deploy 🌐:
 ---
@@ -132,6 +135,8 @@ https://projeto-java-production.up.railway.app/api/empresas
 #### Endpoint da API de Serviços 🤝:
 https://projeto-java-production.up.railway.app/api/servicos
 
+### Endpoint para Análise do Spring AI 🧠:
+https://projeto-java-production.up.railway.app/springai/generate/{id_servico}
 
 ## Explicação
 
