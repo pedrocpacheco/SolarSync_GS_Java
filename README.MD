@@ -59,12 +59,11 @@ $ git clone https://github.com/pedrocpacheco/SolarSync_GS_Java
 #Clique com o botão direito na classe ApiAnallyzerApplication
 #Run as -> Java Application
 ```
-### 🎥 Vídeo Explicativo
-https://youtu.be/L-YYX8WWB8I
-
 ### 🎥 Vídeo Pitch
 https://youtu.be/od8EunHgmUY
 
+### 🎥 Vídeo Explicativo Projeto Java
+https://youtu.be/L-YYX8WWB8I
 
 ## Links LocalHost 🏠:
 ---
